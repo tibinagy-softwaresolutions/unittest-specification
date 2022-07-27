@@ -20,7 +20,7 @@ namespace TNArch.UnitTestSpecification.Tests
 
         public async Task<string> DoSomethingAsync(string someInput)
         {
-            SomeData[] someData = await _repository.GetSomeData(_options.Value.SomeOption, someInput);
+            var someData = await _repository.GetSomeData(_options.Value.SomeOption, someInput);
 
             _logger.LogInformation($"Doing sometthing for {someData}");
 

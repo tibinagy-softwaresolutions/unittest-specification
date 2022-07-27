@@ -10,8 +10,8 @@ namespace TNArch.UnitTestSpecification.Tests
         [Test]
         public void DoSomethingAsync_WhenSomeTestCase_SomeResultRetuned()
         {
-            SomeOptions someValues = new SomeOptions { SomeOption = "Option1" };
-            SomeData[] someData = new[] { new SomeData { Value = "D1" } };
+            var someValues = new SomeOptions { SomeOption = "Option1" };
+            var someData = new[] { new SomeData { Value = "D1" } };
 
             Specification.ForService<SomeDomainService>()
                .GivenOptions(someValues)

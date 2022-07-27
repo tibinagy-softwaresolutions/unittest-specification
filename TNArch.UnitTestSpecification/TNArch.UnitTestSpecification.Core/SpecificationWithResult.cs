@@ -29,7 +29,7 @@ namespace TNArch.UnitTestSpecification.Core.Testing.Specification
          return this;
       }
 
-      IThenSpecificationWithResult<T, TResult> IThenSpecificationWithResult<T, TResult>.ThenExpectedException<TException>(string? message)
+      IThenSpecificationWithResult<T, TResult> IThenSpecificationWithResult<T, TResult>.ThenExpectedException<TException>(string message)
       {
          ThenExpectedException<TException>(message);
          return this;
