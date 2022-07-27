@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Moq;
-using TNArch.UnitTestSpecification.Core.Astactions;
+using TNArch.UnitTestSpecification.Core.Abstractions;
 
 namespace TNArch.UnitTestSpecification.Core.Testing.Specification
 {

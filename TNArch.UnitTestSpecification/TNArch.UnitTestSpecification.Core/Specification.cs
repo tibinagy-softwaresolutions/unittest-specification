@@ -1,4 +1,4 @@
-﻿using TNArch.UnitTestSpecification.Core.Astactions;
+﻿using TNArch.UnitTestSpecification.Core.Abstractions;
 
 namespace TNArch.UnitTestSpecification.Core
 {

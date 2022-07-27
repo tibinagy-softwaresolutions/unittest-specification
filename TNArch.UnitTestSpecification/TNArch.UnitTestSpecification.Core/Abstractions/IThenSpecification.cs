@@ -1,6 +1,6 @@
 ﻿using Moq;
 
-namespace TNArch.UnitTestSpecification.Core.Astactions
+namespace TNArch.UnitTestSpecification.Core.Abstractions
 {
     public interface IThenSpecification<T> where T : class
     {

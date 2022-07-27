@@ -4,7 +4,7 @@ using Moq;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using TNArch.UnitTestSpecification.Core.Testing.Specification;
-using TNArch.UnitTestSpecification.Core.Astactions;
+using TNArch.UnitTestSpecification.Core.Abstractions;
 using FluentAssertions;
 
 namespace TNArch.UnitTestSpecification.Core
