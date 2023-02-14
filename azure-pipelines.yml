@@ -13,6 +13,10 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  major: '1'
+  minor: '0'
+  revision: $[counter(variables['minor'], 1)]
+  nugetVersion: '$(major).$(minor).$(revision)'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -40,3 +44,17 @@ steps:
   inputs:
     command: 'test'
     projects: '**/TNArch.UnitTestSpecification.Tests.csproj'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'pack'
+    packagesToPack: '**/TNArch.UnitTestSpecification.Core'
+    versionEnvVar: 'nugetVersion'
+    versioningScheme: 'byEnvVar'
+
+- task: NuGetCommand@2
+  inputs:
+    command: 'push'
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+    nuGetFeedType: 'external'
+    publishFeedCredentials: 'Nuget.OrgPublish'
